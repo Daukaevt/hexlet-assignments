@@ -33,8 +33,8 @@ class App {
                 .replaceAll(",", ",\n\s\s")
                 .replaceAll("\"", "")
                 .replaceAll(":", ":\s\s")
-                .replaceAll("\\{", "[\n\s\s")
-                .replaceAll("}", "\n]");
+                .replaceAll("\\{", "{\n\s\s")
+                .replaceAll("}", "\n}");
         return str;
     }
 }
