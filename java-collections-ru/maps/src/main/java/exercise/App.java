@@ -23,19 +23,34 @@ class App {
         return dictionary;
     }
 
-    public static String toString(Map wordsCount2) {
-        Gson gson = new Gson();
-        String json = gson.toJson(wordsCount2);
-        if (wordsCount2.isEmpty()) {
-            return wordsCount2.toString();
+//    public static String toString(Map wordsCount2) {
+//        Gson gson = new Gson();
+//        String json = gson.toJson(wordsCount2);
+//        if (wordsCount2.isEmpty()) {
+//            return wordsCount2.toString();
+//        }
+//        var str = json
+//                .replaceAll(",", "\n\s\s")
+//                .replaceAll("\"", "")
+//                .replaceAll(":", ":\s\s")
+//                .replaceAll("\\{", "{\n\s\s")
+//                .replaceAll("}", "\n}");
+//        return str;
+//    }
+    public static String toString(Map wordsCount3) {
+        if (wordsCount3.isEmpty()) {
+           return wordsCount3.toString();
         }
-        var str = json
-                .replaceAll(",", "\n\s\s")
-                .replaceAll("\"", "")
-                .replaceAll(":", ":\s\s")
-                .replaceAll("\\{", "{\n\s\s")
-                .replaceAll("}", "\n}");
-        return str;
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("{\n");
+        for (Object item: wordsCount3.entrySet()) {
+            var itemStr = "  " + item;
+            stringBuilder.append(itemStr.replace("=", ":  "))
+                    .append("\n");
+        }
+        stringBuilder.append("}");
+
+        return stringBuilder.toString();
     }
 }
 //END
