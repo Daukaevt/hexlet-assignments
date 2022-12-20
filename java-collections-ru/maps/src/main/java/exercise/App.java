@@ -1,10 +1,9 @@
 package exercise;
 
 
-import com.google.gson.Gson;
-import org.json.JSONObject;
 
-import java.util.Arrays;
+import com.google.gson.Gson;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,10 +27,12 @@ class App {
     }
 
     public static String toString(Map wordsCount2) {
+        Gson gson = new Gson();
+        String json = gson.toJson(wordsCount2);
         if (wordsCount2.isEmpty()) return wordsCount2.toString();
         var tmpStr = wordsCount2.toString();
-        var str = tmpStr
-                .replaceAll("\s", "\n\s\s")
+        var str = json
+                .replaceAll(",", ",\n\s\s")
                 .replaceAll("\\{", "{\n\s\s")
                 .replaceAll("\\}", "\n}");
         return str;
