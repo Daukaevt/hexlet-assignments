@@ -45,7 +45,7 @@ class App {
         stringBuilder.append("{\n");
         for (Object item: wordsCount3.entrySet()) {
             var itemStr = "  " + item;
-            stringBuilder.append(itemStr.replace("=", ":  "))
+            stringBuilder.append(itemStr.replace("=", ": "))
                     .append("\n");
         }
         stringBuilder.append("}");
