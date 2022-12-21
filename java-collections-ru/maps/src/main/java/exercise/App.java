@@ -7,9 +7,8 @@ import java.util.Map;
 // BEGIN
 class App {
 
-    public static Map getWordCount(String sentence) {
+    public static Map getWordCount(final String sentence) {
         var words = sentence.split(" ");
-
         Map<String, Integer> dictionary = new HashMap<>();
         for (String word: words) {
             if (!word.isEmpty()) {
@@ -22,7 +21,6 @@ class App {
         }
         return dictionary;
     }
-
 //    public static String toString(Map wordsCount2) {
 //        Gson gson = new Gson();
 //        String json = gson.toJson(wordsCount2);
@@ -37,7 +35,7 @@ class App {
 //                .replaceAll("}", "\n}");
 //        return str;
 //    }
-    public static String toString(Map wordsCount3) {
+    public static String toString(final Map wordsCount3) {
         if (wordsCount3.isEmpty()) {
            return wordsCount3.toString();
         }
@@ -49,7 +47,6 @@ class App {
                     .append("\n");
         }
         stringBuilder.append("}");
-
         return stringBuilder.toString();
     }
 }
